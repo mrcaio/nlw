@@ -1,0 +1,26 @@
+{
+  "name": "nlw",
+  "version": "1.0.0",
+  "description": "Semana NLW. HTML, CSS e JS. Front/Back",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemom src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrcaio/nlw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrcaio/nlw/issues"
+  },
+  "homepage": "https://github.com/mrcaio/nlw#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
