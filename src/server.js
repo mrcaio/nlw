@@ -49,6 +49,12 @@ const weekdays = [
 ]
 
 //Funcionalidades da aplicação
+
+function getSubject (subjectNumber) {
+    const position = +subjectNumber - 1
+    return subjects[position]
+}
+
 function pageLanding (req, res) {
     return res.render("index.html")
 }
@@ -64,6 +70,9 @@ function pageGiveClasses (req, res) {
     //se tiver dados
     const isNotEmpty = Object.keys(data).length > 0
     if (isNotEmpty) {
+
+        data.subject = getSubject (data.subject)
+
         //adicionar dados a lista de proffys
     proffys.push(data)
 
@@ -72,15 +81,15 @@ function pageGiveClasses (req, res) {
     }
 
     //se não, mostrar a página
-    return res.render("give-classes.html", {subjects, weekdays } )
+    return res.render("give-classes.html", {subjects, weekdays})
 }
 
 // Servidor
-const express = require('express')
-const server = express()
-const nunjucks = require('nunjucks')
+const express = require('express');
+const server = express();
 
 //configurar nunjucks (template engie)
+const nunjucks = require('nunjucks');
 nunjucks.configure('src/views', {
     express: server,
     noCache: true,

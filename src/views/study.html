@@ -38,7 +38,7 @@
                     <option value="" disabled="" hidden="">Selecione uma opção</option>
                     
                     {%for subject in subjects %}
-                    <option value="{{loop.index}}"{{"selected" if filters.subject == loop.index}} >{{subject}}</option>
+                    <option value="{{loop.index}}"{{"selected" if filters.subject== loop.index}} >{{subject}}</option>
                     {%endfor%}
 
                 </select>
@@ -72,8 +72,8 @@
                     src="{{proffy.avatar}}"
                     alt="{{proffy.name}}">
                 <div>
-                    <strong>{{proffy.name}}</strong>
-                    <span>{{proffy.subject}}</span>
+                    <strong>{{ proffy.name }}</strong>
+                    <span>{{ proffy.subject }}</span>
                 </div>
             </header>
         

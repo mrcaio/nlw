@@ -36,18 +36,18 @@
      </header>
 
      <main>
-        <form action="" id="create-class"></form>
+        <form action="" id="create-class">
         <fieldset>
             <legend>Seus Dados</legend>
 
             <div class="input-block">
                 <label for="name">Nome Completo</label>
-                <input type="name" id="name" required>
+                <input type="name" name="name" id="name" required>
             </div>
 
             <div class="input-block">
                 <label for="avatar">Link da sua foto <small>(comece com https://)</small></label>
-                <input type="avatar" id="avatar" type="url" required>
+                <input type="avatar" name="avatar" id="avatar" type="url" required>
             </div>
 
             <div class="input-block">
@@ -68,7 +68,7 @@
                 <label for="subject">Matéria</label>
                 <select name="subject" id="subject" required>
                     <option value="">Selecione uma opção</option>
-                    {%for subject in subjects %}
+                    {%for subject in subjects%}
                     <option value="{{loop.index}}">
                         {{subject}}
                 </option>
@@ -79,7 +79,7 @@
             <div class="input-block">
                 <label for="cost">Custo da sua hora/aula
                     <small>(R$)</small>
-                    <input type="cost" id="cost" type="number" required>
+                    <input type="cost" id="cost" name="cost" type="number" required>
                 </label>
             </div>
         </fieldset>
@@ -95,7 +95,7 @@
                     <select name="weekday[]"  required>
                     <option value="">Selecione um dia da semana</option>
                     
-                    {%for weekday in weekdays %}
+                    {%for weekday in weekdays%}
                     <option value="{{loop.index0}}">
                         {{weekday}}
                     </option>
@@ -114,12 +114,13 @@
             </div>
 
         </fieldset>
+        </form>
         <footer>
             <p>
                 <img src="/images/icons/warning.svg" alt="Aviso Importante">
                 Importante! <br> Preencha todos os dados
             </p>
-            <button type="submit form=create-class">Salvar cadastro</button>
+            <button type="submit" form="create-class">Salvar cadastro</button>
         </footer>
      </main>
 
